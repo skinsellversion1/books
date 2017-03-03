@@ -11,11 +11,7 @@ namespace BookGallery.Controllers
         // GET: Books
         public ActionResult Detail()
         {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
-            {
-                return Redirect("/");
-            }
-               return Content("Hello World");
+            return View();
         }
     }
 }
