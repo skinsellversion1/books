@@ -1,5 +1,15 @@
 ﻿@{
     Layout = null;
+
+    var Title = "1984";
+    var Author = "G Orwell";
+    var description = "An overview of how a society can be run";
+    String[] awards = new String[]
+        {
+        "Best book 2016",
+        "Best book 1999",
+        "Best book 1996"
+        };
 }
 
 <!DOCTYPE html>
@@ -11,7 +21,16 @@
 </head>
 <body>
     <div>
-        <h1> Hello from our view!</h1>
+        <h1> @Title</h1>
+        <h2>Author: @Author </h2>
+        
+        <h3>Description:</h3>
+        <div>@description</div>
+
+        <h3>Awards:</h3>
+        <div>@awards</div>
+
+
     </div>
 </body>
 </html>
