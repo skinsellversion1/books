@@ -1,15 +1,7 @@
 ﻿@{
     Layout = null;
 
-    var Title = "1984";
-    var Author = "G Orwell";
-    var description = "An overview of how a society can be run";
-    var awards = new String[]
-        {
-        "Best book 2016",
-        "Best book 1999",
-        "Best book 1996"
-        };
+
 }
 
 <!DOCTYPE html>
@@ -21,20 +13,20 @@
 </head>
 <body>
     <div>
-        <h1> @Title</h1>
-        <h2>Author: @Author </h2>
+        <h1>@ViewBag.title</h1>
+        <h2>Author: @ViewBag.author </h2>
         
         <h3>Description:</h3>
-        <div>@description</div>
+        <div>@ViewBag.description</div>
 
 
-        @if (awards.Length > 0)
+        @if (ViewBag.awards.Length > 0)
         {
         <h3>Awards:</h3>
 
         <div>
             <ul>
-             @foreach (var a in awards)
+             @foreach (var a in ViewBag.awards)
              {
             <li> @a</li>
              }
