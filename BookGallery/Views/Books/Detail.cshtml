@@ -4,7 +4,7 @@
     var Title = "1984";
     var Author = "G Orwell";
     var description = "An overview of how a society can be run";
-    String[] awards = new String[]
+    var awards = new String[]
         {
         "Best book 2016",
         "Best book 1999",
@@ -27,9 +27,20 @@
         <h3>Description:</h3>
         <div>@description</div>
 
-        <h3>Awards:</h3>
-        <div>@awards</div>
 
+        @if (awards.Length > 0)
+        {
+        <h3>Awards:</h3>
+
+        <div>
+            <ul>
+             @foreach (var a in awards)
+             {
+            <li> @a</li>
+             }
+            </ul>
+        </div>
+        }
 
     </div>
 </body>
