@@ -1,26 +1,28 @@
-﻿@{
+﻿@model BookGallery.Models.Book
+
+@{
     Layout = "~/Views/Shared/_layout.cshtml";
-    ViewBag.Title = "Books";
+    ViewBag.Title = Model.DisplayText;
 
 }
 
 
-<h1>@ViewBag.title</h1>
-<h2>Author: @ViewBag.author </h2>
+<h1>@Model.Title</h1>
+<h2>Author: @Model.Author </h2>
         
 <h3>Description:</h3>
-<div>@ViewBag.description</div>
+<div>@Model.DescriptionHtml</div>
 
 
-@if (ViewBag.awards.Length > 0)
+@if (Model.Awards.Length > 0)
 {
 <h3>Awards:</h3>
 
 <div>
-    <ul>
-        @foreach (var a in ViewBag.awards)
+    <ul> 
+        @foreach (var a in Model.Awards)
         {
-    <li> @a</li>
+    <li> @a.Name: @a.Year</li>
         }
     </ul>
 </div>

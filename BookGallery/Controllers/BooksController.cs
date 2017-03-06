@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookGallery.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,22 +9,25 @@ namespace BookGallery.Controllers
 {
     public class BooksController : Controller
     {
-
-
         // GET: Books
         public ActionResult Detail()
         {
-            ViewBag.title = "1984";
-            ViewBag.author = "G Orwell";
-            ViewBag.description = "An overview of how a society can be run";
-            ViewBag.awards = new String[]
-                {
-                "Best book 2016",
-                "Best book 1999",
-                "Best book 1996"
-                };
 
-            return View();
+            var book = new Book()
+            {
+                Title = "1984",
+                Author = "G Orwell",
+                DescriptionHtml = "An overview of how a society can be run",
+                Awards = new Awards[]
+                {
+                    new Awards() {Name = "Best Movie", Year = "1999"}
+                }
+
+
+            };
+
+
+            return View(book);
         }
     }
 }
